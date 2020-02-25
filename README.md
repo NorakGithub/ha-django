@@ -9,12 +9,12 @@ Navigate to your terminal and `cd` to project directory.
 ```bash
 export CUR_TAG:0.0.1
 export NEW_TAG:0.0.1
-$ make build-django
+make build-django
 ```
 
 ### Running Project
 ```bash
-$ make initial
+make initial
 ```
 
 Now image with tag 0.0.1 should be running.
@@ -24,8 +24,8 @@ Open a new terminal window or tap, make sure you are in the project directory.
 
 ```bash
 export NEW_TAG:0.0.2
-$ make build-django
-$ make test-status
+make build-django
+make test-status
 ```
 
 After running `make test-status` it will loop curling API, to see if we deploy new tag and service down or not.
@@ -34,7 +34,7 @@ After running `make test-status` it will loop curling API, to see if we deploy n
 Open a new terminal window or tap, make sure you are in the project directory.
 ```bash
 export NEW_TAG:0.0.2
-$ make deploy
+make deploy
 ```
 
 # License

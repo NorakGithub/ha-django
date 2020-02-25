@@ -1,0 +1,16 @@
+FROM python:3.8-alpine
+ENV PYTHONBUFFERED 1
+
+RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
+
+RUN mkdir /app
+WORKDIR /app
+
+COPY requirements.txt .
+COPY manage.py .
+RUN pip install -r requirements.txt
+
+COPY witcher ./witcher
+
+EXPOSE 8000
+ENTRYPOINT [ "python", "manage.py", "runserver", "0.0.0.0:8000"]
